@@ -1,13 +1,3 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 import glob
 import importlib
 import logging
@@ -18,7 +8,7 @@ import sys
 from os.path import abspath, dirname, isfile, join
 
 from config import EXTRA_PLUGINS, EXTRA_PLUGINS_FOLDER, EXTRA_PLUGINS_REPO
-from ANNIEMUSIC import LOGGER
+from POTEMAYOMUSIC import LOGGER
 
 logger = LOGGER(__name__)
 
@@ -98,7 +88,7 @@ def __list_all_modules():
         modules = [
             (
                 (
-                    (f.replace(main_repo_plugins_dir, "ANNIEMUSIC.plugins")).replace(
+                    (f.replace(main_repo_plugins_dir, "POTEMAYOMUSIC.plugins")).replace(
                         EXTERNAL_REPO_PATH, EXTRA_PLUGINS_FOLDER
                     )
                 ).replace(os.sep, ".")
