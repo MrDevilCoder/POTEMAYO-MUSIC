@@ -1,12 +1,3 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 import asyncio
 import os
 from datetime import datetime, timedelta
@@ -34,9 +25,9 @@ from pytgcalls.types.stream import StreamAudioEnded
 
 import config
 from strings import get_string
-from ANNIEMUSIC import LOGGER, YouTube, app
-from ANNIEMUSIC.misc import db
-from ANNIEMUSIC.utils.database import (
+from POTEMAYOMUSIC import LOGGER, YouTube, app
+from POTEMAYOMUSIC.misc import db
+from POTEMAYOMUSIC.utils.database import (
     add_active_chat,
     add_active_video_chat,
     get_assistant,
@@ -51,11 +42,11 @@ from ANNIEMUSIC.utils.database import (
     remove_active_video_chat,
     set_loop,
 )
-from ANNIEMUSIC.utils.exceptions import AssistantErr
-from ANNIEMUSIC.utils.formatters import check_duration, seconds_to_min, speed_converter
-from ANNIEMUSIC.utils.inline.play import stream_markup, telegram_markup
-from ANNIEMUSIC.utils.stream.autoclear import auto_clean
-from ANNIEMUSIC.utils.thumbnails import get_thumb as gen_thumb
+from POTEMAYOMUSIC.utils.exceptions import AssistantErr
+from POTEMAYOMUSIC.utils.formatters import check_duration, seconds_to_min, speed_converter
+from POTEMAYOMUSIC.utils.inline.play import stream_markup, telegram_markup
+from POTEMAYOMUSIC.utils.stream.autoclear import auto_clean
+from POTEMAYOMUSIC.utils.thumbnails import get_thumb as gen_thumb
 
 active = []
 autoend = {}
@@ -116,7 +107,7 @@ async def _clear_(chat_id):
 class Call(PyTgCalls):
     def __init__(self):
         self.userbot1 = Client(
-            name="ANNIEString1",
+            name="POTEMAYOString1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING1),
@@ -126,7 +117,7 @@ class Call(PyTgCalls):
             cache_duration=100,
         )
         self.userbot2 = Client(
-            name="ANNIEString2",
+            name="POTEMAYOString2",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING2),
@@ -136,7 +127,7 @@ class Call(PyTgCalls):
             cache_duration=100,
         )
         self.userbot3 = Client(
-            name="ANNIEString3",
+            name="POTEMAYOString3",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING3),
@@ -146,7 +137,7 @@ class Call(PyTgCalls):
             cache_duration=100,
         )
         self.userbot4 = Client(
-            name="ANNIEString4",
+            name="POTEMAYOString4",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING4),
@@ -156,7 +147,7 @@ class Call(PyTgCalls):
             cache_duration=100,
         )
         self.userbot5 = Client(
-            name="ANNIEString5",
+            name="POTEMAYOString5",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING5),
@@ -846,4 +837,4 @@ class Call(PyTgCalls):
                 autoend[chat_id] = {}
 
 
-ANNIE = Call()
+TOXIC = Call()
