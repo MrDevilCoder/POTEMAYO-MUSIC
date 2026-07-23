@@ -12,7 +12,7 @@ from config import (
     adminlist,
 )
 from POTEMAYOMUSIC import YouTube, app
-from POTEMAYOMUSIC.core.call import ANNIE as ANNIE
+from POTEMAYOMUSIC.core.call import Toxic as Toxic
 from POTEMAYOMUSIC.misc import SUDOERS, db
 from POTEMAYOMUSIC.utils.database import (
     is_active_chat,
