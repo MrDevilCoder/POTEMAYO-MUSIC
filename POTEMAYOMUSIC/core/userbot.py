@@ -1,14 +1,3 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the "MIT License".
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
-
 from typing import Callable, Optional
 
 import pyrogram
@@ -26,35 +15,35 @@ clients = []
 class Userbot(Client):
     def __init__(self):
         self.one = Client(
-            "ANNIEString1",
+            "POTEMAYOString1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING1),
         )
 
         self.two = Client(
-            "ANNIEString2",
+            "POTEMAYOString2",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING2),
         )
 
         self.three = Client(
-            "ANNIEString3",
+            "POTEMAYOString3",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING3),
         )
 
         self.four = Client(
-            "ANNIEString4",
+            "POTEMAYOString4",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING4),
         )
 
         self.five = Client(
-            "ANNIEString5",
+            "POTEMAYOString5",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING5),
