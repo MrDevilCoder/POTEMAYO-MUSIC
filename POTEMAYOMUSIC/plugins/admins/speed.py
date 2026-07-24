@@ -1,24 +1,14 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 from pyrogram import filters
 from pyrogram.types import Message
 
 from config import BANNED_USERS, adminlist
-from ANNIEMUSIC import app
-from ANNIEMUSIC.core.call import ANNIE
-from ANNIEMUSIC.misc import SUDOERS, db
-from ANNIEMUSIC.utils import AdminRightsCheck
-from ANNIEMUSIC.utils.database import is_active_chat, is_nonadmin_chat
-from ANNIEMUSIC.utils.decorators.language import languageCB
-from ANNIEMUSIC.utils.inline import close_markup, speed_markup
+from POTEMAYOMUSIC import app
+from POTEMAYOMUSIC.core.call import TOXIC
+from POTEMAYOMUSIC.misc import SUDOERS, db
+from POTEMAYOMUSIC.utils import AdminRightsCheck
+from POTEMAYOMUSIC.utils.database import is_active_chat, is_nonadmin_chat
+from POTEMAYOMUSIC.utils.decorators.language import languageCB
+from POTEMAYOMUSIC.utils.inline import close_markup, speed_markup
 
 checker = []
 
