@@ -1,16 +1,7 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 import random
 
-from ANNIEMUSIC import userbot
-from ANNIEMUSIC.core.mongo import mongodb
+from POTEMAYOMUSIC import userbot
+from POTEMAYOMUSIC.core.mongo import mongodb
 
 db = mongodb.assistants
 
@@ -40,7 +31,7 @@ async def save_assistant(chat_id, number):
 
 
 async def set_assistant(chat_id):
-    from ANNIEMUSIC.core.userbot import assistants
+    from POTEMAYOMUSIC.core.userbot import assistants
 
     ran_assistant = random.choice(assistants)
     assistantdict[chat_id] = ran_assistant
@@ -54,7 +45,7 @@ async def set_assistant(chat_id):
 
 
 async def get_assistant(chat_id: int) -> str:
-    from ANNIEMUSIC.core.userbot import assistants
+    from POTEMAYOMUSIC.core.userbot import assistants
 
     assistant = assistantdict.get(chat_id)
     if not assistant:
@@ -81,7 +72,7 @@ async def get_assistant(chat_id: int) -> str:
 
 
 async def set_calls_assistant(chat_id):
-    from ANNIEMUSIC.core.userbot import assistants
+    from POTEMAYOMUSIC.core.userbot import assistants
 
     ran_assistant = random.choice(assistants)
     assistantdict[chat_id] = ran_assistant
@@ -94,7 +85,7 @@ async def set_calls_assistant(chat_id):
 
 
 async def group_assistant(self, chat_id: int) -> int:
-    from ANNIEMUSIC.core.userbot import assistants
+    from POTEMAYOMUSIC.core.userbot import assistants
 
     assistant = assistantdict.get(chat_id)
     if not assistant:
