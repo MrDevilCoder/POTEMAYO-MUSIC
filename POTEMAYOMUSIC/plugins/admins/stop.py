@@ -1,13 +1,3 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 import asyncio
 import random
 
@@ -23,11 +13,11 @@ from pyrogram.types import (
 
 from config import BANNED_USERS, adminlist
 from strings import get_string
-from ANNIEMUSIC import app
-from ANNIEMUSIC.core.call import ANNIE
-from ANNIEMUSIC.misc import SUDOERS
-from ANNIEMUSIC.plugins import extra_plugins_enabled
-from ANNIEMUSIC.utils.database import (
+from POTEMAYOMUSIC import app
+from POTEMAYOMUSIC.core.call import TOXIC
+from POTEMAYOMUSIC.misc import SUDOERS
+from POTEMAYOMUSIC.plugins import extra_plugins_enabled
+from POTEMAYOMUSIC.utils.database import (
     delete_filter,
     get_assistant,
     get_cmode,
@@ -104,7 +94,7 @@ async def stop_music(cli, message: Message):
             else:
                 if message.from_user.id not in admins:
                     return await message.reply_text(_["admin_19"])
-    await ANNIE.st_stream(chat_id)
+    await TOXIC.st_stream(chat_id)
     await set_loop(chat_id, 0)
     await message.reply_text(_["admin_9"].format(message.from_user.mention))
 
@@ -112,7 +102,7 @@ async def stop_music(cli, message: Message):
 from pyrogram import filters
 from pyrogram.types import Message
 
-from ANNIEMUSIC import app
+from POTEMAYOMUSIC import app
 
 photo = [
     "https://envs.sh/qeq.jpg",
@@ -169,12 +159,12 @@ async def assistant_banned(client: app, member: ChatMemberUpdated):
                 reply_markup=keyboard,
             )
             # Perform actions like stopping streams or loops
-            await ANNIE.st_stream(chat_id)
+            await TOXIC.st_stream(chat_id)
             await set_loop(chat_id, 0)
             await app.unban_chat_member(chat_id, userbot.id)
             await asyncio.sleep(10)
     except UserNotParticipant:
-        await ANNIE.st_stream(chat_id)
+        await TOXIC.st_stream(chat_id)
         await set_loop(chat_id, 0)
         await app.unban_chat_member(chat_id, userbot.id)
         await asyncio.sleep(10)
@@ -210,7 +200,7 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
                 reply_markup=keyboard,
             )
 
-            await ANNIE.st_stream(chat_id)
+            await TOXIC.st_stream(chat_id)
             await set_loop(chat_id, 0)
             await asyncio.sleep(10)
     except UserNotParticipant:
@@ -226,7 +216,7 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
             caption=left_message,
             reply_markup=keyboard,
         )
-        await ANNIE.st_stream(chat_id)
+        await TOXIC.st_stream(chat_id)
         await set_loop(chat_id, 0)
         await asyncio.sleep(10)
     except Exception as e:
@@ -238,7 +228,7 @@ async def brah(_, msg):
     chat_id = msg.chat.id
     try:
         await msg.reply("**🥳Chin Tapak Dum Dum😎**")
-        await ANNIE.st_stream(chat_id)
+        await TOXIC.st_stream(chat_id)
         await set_loop(chat_id, 0)
     except Exception as e:
         return await msg.reply(f"**Error {e}**")
@@ -250,7 +240,7 @@ async def brah2(_, msg):
     chat_id = msg.chat.id
     try:
         await msg.reply("**😕gaddari karbe💔**")
-        await ANNIE.st_stream(chat_id)
+        await TOXIC.st_stream(chat_id)
         await set_loop(chat_id, 0)
     except Exception as e:
         return await msg.reply(f"**Error {e}**")
