@@ -1,21 +1,12 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 from pyrogram import filters
 from pyrogram.types import Message
 
 from config import BANNED_USERS
 from strings import get_command
-from ANNIEMUSIC import YouTube, app
-from ANNIEMUSIC.core.call import ANNIE
-from ANNIEMUSIC.misc import db
-from ANNIEMUSIC.utils import AdminRightsCheck, seconds_to_min
+from POTEMAYOMUSIC import YouTube, app
+from POTEMAYOMUSIC.core.call import TOXIC
+from POTEMAYOMUSIC.misc import db
+from POTEMAYOMUSIC.utils import AdminRightsCheck, seconds_to_min
 
 # Commands
 SEEK_COMMAND = get_command("SEEK_COMMAND")
@@ -59,7 +50,7 @@ async def seek_comm(cli, message: Message, _, chat_id):
         if n == 0:
             return await message.reply_text(_["admin_30"])
     try:
-        await ANNIE.seek_stream(
+        await TOXIC.seek_stream(
             chat_id,
             file_path,
             seconds_to_min(to_seek),
