@@ -1,21 +1,11 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 from pyrogram.enums import ChatMemberStatus, ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from config import adminlist
 from strings import get_string
-from ANNIEMUSIC import app
-from ANNIEMUSIC.misc import SUDOERS
-from ANNIEMUSIC.utils.database import (
+from POTEMAYOMUSIC import app
+from POTEMAYOMUSIC.misc import SUDOERS
+from POTEMAYOMUSIC.utils.database import (
     get_authuser_names,
     get_cmode,
     get_lang,
