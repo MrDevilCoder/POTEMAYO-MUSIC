@@ -1,21 +1,11 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from config import BANNED_USERS
-from ANNIEMUSIC import app
-from ANNIEMUSIC.core.call import ANNIE as ANNIE
-from ANNIEMUSIC.utils.database import is_music_playing, music_off
-from ANNIEMUSIC.utils.decorators import AdminRightsCheck
+from POTEMAYOMUSIC import app
+from POTEMAYOMUSIC.core.call import TOXIC as TOXIC
+from POTEMAYOMUSIC.utils.database import is_music_playing, music_off
+from POTEMAYOMUSIC.utils.decorators import AdminRightsCheck
 
 
 @app.on_message(filters.command(["pause", "cpause"]) & filters.group & ~BANNED_USERS)
@@ -24,7 +14,7 @@ async def pause_admin(cli, message: Message, _, chat_id):
     if not await is_music_playing(chat_id):
         return await message.reply_text(_["admin_1"])
     await music_off(chat_id)
-    await ANNIE.pause_stream(chat_id)
+    await TOXIC.pause_stream(chat_id)
 
     buttons = [
         [
