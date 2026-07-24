@@ -1,27 +1,17 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 import config
 from config import BANNED_USERS
 from strings import get_command
-from ANNIEMUSIC import YouTube, app
-from ANNIEMUSIC.core.call import ANNIE
-from ANNIEMUSIC.misc import db
-from ANNIEMUSIC.utils.database import get_loop
-from ANNIEMUSIC.utils.decorators import AdminRightsCheck
-from ANNIEMUSIC.utils.inline.play import stream_markup, telegram_markup
-from ANNIEMUSIC.utils.stream.autoclear import auto_clean
-from ANNIEMUSIC.utils.thumbnails import gen_thumb
+from POTEMAYOMUSIC import YouTube, app
+from POTEMAYOMUSIC.core.call import TOXIC
+from POTEMAYOMUSIC.misc import db
+from POTEMAYOMUSIC.utils.database import get_loop
+from POTEMAYOMUSIC.utils.decorators import AdminRightsCheck
+from POTEMAYOMUSIC.utils.inline.play import stream_markup, telegram_markup
+from POTEMAYOMUSIC.utils.stream.autoclear import auto_clean
+from POTEMAYOMUSIC.utils.thumbnails import gen_thumb
 
 # Commands
 SKIP_COMMAND = get_command("SKIP_COMMAND")
@@ -59,7 +49,7 @@ async def skip(cli, message: Message, _, chat_id):
                                         ),
                                         disable_web_page_preview=True,
                                     )
-                                    await ANNIE.stop_stream(chat_id)
+                                    await TOXIC.stop_stream(chat_id)
                                 except:
                                     return
                                 break
@@ -84,7 +74,7 @@ async def skip(cli, message: Message, _, chat_id):
                     disable_web_page_preview=True,
                 )
                 try:
-                    return await ANNIE.stop_stream(chat_id)
+                    return await TOXIC.stop_stream(chat_id)
                 except:
                     return
         except:
@@ -93,7 +83,7 @@ async def skip(cli, message: Message, _, chat_id):
                     _["admin_10"].format(message.from_user.first_name),
                     disable_web_page_preview=True,
                 )
-                return await ANNIE.stop_stream(chat_id)
+                return await TOXIC.stop_stream(chat_id)
             except:
                 return
     queued = check[0]["file"]
@@ -109,7 +99,7 @@ async def skip(cli, message: Message, _, chat_id):
         if n == 0:
             return await message.reply_text(_["admin_11"].format(title))
         try:
-            await ANNIE.skip_stream(chat_id, link, video=status)
+            await TOXIC.skip_stream(chat_id, link, video=status)
         except Exception:
             return await message.reply_text(_["call_7"])
         button = telegram_markup(_, chat_id)
@@ -136,7 +126,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             return await mystic.edit_text(_["call_7"])
         try:
-            await ANNIE.skip_stream(chat_id, file_path, video=status)
+            await TOXIC.skip_stream(chat_id, file_path, video=status)
         except Exception:
             return await mystic.edit_text(_["call_7"])
         button = stream_markup(_, videoid, chat_id)
@@ -156,7 +146,7 @@ async def skip(cli, message: Message, _, chat_id):
         await mystic.delete()
     elif "index_" in queued:
         try:
-            await ANNIE.skip_stream(chat_id, videoid, video=status)
+            await TOXIC.skip_stream(chat_id, videoid, video=status)
         except Exception:
             return await message.reply_text(_["call_7"])
         button = telegram_markup(_, chat_id)
@@ -169,7 +159,7 @@ async def skip(cli, message: Message, _, chat_id):
         db[chat_id][0]["markup"] = "tg"
     else:
         try:
-            await ANNIE.skip_stream(chat_id, queued, video=status)
+            await TOXIC.skip_stream(chat_id, queued, video=status)
         except Exception:
             return await message.reply_text(_["call_7"])
         if videoid == "telegram":
