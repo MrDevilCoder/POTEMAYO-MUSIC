@@ -1,13 +1,3 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 import random
 
 from pyrogram import filters
@@ -15,9 +5,9 @@ from pyrogram.types import Message
 
 from config import BANNED_USERS
 from strings import get_command
-from ANNIEMUSIC import app
-from ANNIEMUSIC.misc import db
-from ANNIEMUSIC.utils.decorators import AdminRightsCheck
+from POTEMAYOMUSIC import app
+from POTEMAYOMUSIC.misc import db
+from POTEMAYOMUSIC.utils.decorators import AdminRightsCheck
 
 # Commands
 SHUFFLE_COMMAND = get_command("SHUFFLE_COMMAND")
