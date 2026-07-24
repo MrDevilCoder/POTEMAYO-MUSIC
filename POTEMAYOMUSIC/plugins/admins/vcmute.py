@@ -1,20 +1,11 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 from pyrogram import filters
 from pyrogram.types import Message
 
 from config import BANNED_USERS
-from ANNIEMUSIC import app
-from ANNIEMUSIC.core.call import ANNIE
-from ANNIEMUSIC.utils.database import is_muted, mute_off, mute_on
-from ANNIEMUSIC.utils.decorators import AdminRightsCheck
+from POTEMAYOMUSIC import app
+from POTEMAYOMUSIC.core.call import TOXIC
+from POTEMAYOMUSIC.utils.database import is_muted, mute_off, mute_on
+from POTEMAYOMUSIC.utils.decorators import AdminRightsCheck
 
 
 @app.on_message(filters.command(["vcmute"]) & filters.group & ~BANNED_USERS)
@@ -25,7 +16,7 @@ async def mute_admin(cli, message: Message, _, chat_id):
     if await is_muted(chat_id):
         return await message.reply_text(_["admin_5"], disable_web_page_preview=True)
     await mute_on(chat_id)
-    await ANNIE.mute_stream(chat_id)
+    await TOXIC.mute_stream(chat_id)
     await message.reply_text(
         _["admin_6"].format(message.from_user.mention), disable_web_page_preview=True
     )
@@ -39,7 +30,7 @@ async def unmute_admin(Client, message: Message, _, chat_id):
     if not await is_muted(chat_id):
         return await message.reply_text(_["admin_7"], disable_web_page_preview=True)
     await mute_off(chat_id)
-    await ANNIE.unmute_stream(chat_id)
+    await TOXIC.unmute_stream(chat_id)
     await message.reply_text(
         _["admin_8"].format(message.from_user.mention), disable_web_page_preview=True
     )
