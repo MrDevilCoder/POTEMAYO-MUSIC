@@ -1,20 +1,11 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 from pyrogram import filters
 from pyrogram.types import Message
 
 from config import BANNED_USERS
 from strings import get_command
-from ANNIEMUSIC import app
-from ANNIEMUSIC.utils.database.memorydatabase import get_loop, set_loop
-from ANNIEMUSIC.utils.decorators import AdminRightsCheck
+from POTEMAYOMUSIC import app
+from POTEMAYOMUSIC.utils.database.memorydatabase import get_loop, set_loop
+from POTEMAYOMUSIC.utils.decorators import AdminRightsCheck
 
 # Commands
 LOOP_COMMAND = get_command("LOOP_COMMAND")
