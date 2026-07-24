@@ -12,10 +12,10 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import PRIVATE_BOT_MODE
 from config import SUPPORT_GROUP as SUPPORT_CHAT
 from strings import get_string
-from ANNIEMUSIC import YouTube, app
-from ANNIEMUSIC.core.call import _st_ as clean
-from ANNIEMUSIC.misc import SUDOERS
-from ANNIEMUSIC.utils.database import (
+from POTEMAYOMUSIC import YouTube, app
+from POTEMAYOMUSIC.core.call import _st_ as clean
+from POTEMAYOMUSIC.misc import SUDOERS
+from POTEMAYOMUSIC.utils.database import (
     get_assistant,
     get_cmode,
     get_lang,
