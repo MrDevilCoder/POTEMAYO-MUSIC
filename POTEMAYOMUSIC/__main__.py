@@ -1,12 +1,3 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-
 import asyncio
 import importlib
 
@@ -14,10 +5,10 @@ from pyrogram import idle
 
 import config
 from config import BANNED_USERS
-from ANNIEMUSIC import HELPABLE, LOGGER, app, userbot
-from ANNIEMUSIC.core.call import ANNIE
-from ANNIEMUSIC.plugins import ALL_MODULES
-from ANNIEMUSIC.utils.database import get_banned_users, get_gbanned
+from POTEMAYOMUSIC import HELPABLE, LOGGER, app, userbot
+from POTEMAYOMUSIC.core.call import TOXIC
+from POTEMAYOMUSIC.plugins import ALL_MODULES
+from POTEMAYOMUSIC.utils.database import get_banned_users, get_gbanned
 
 
 async def init():
@@ -28,12 +19,12 @@ async def init():
         and not config.STRING4
         and not config.STRING5
     ):
-        LOGGER("ANNIEMUSIC").error(
+        LOGGER("POTEMAYOMUSIC").error(
             "No Assistant Clients Vars Defined!.. Exiting Process."
         )
         return
     if not config.SPOTIFY_CLIENT_ID and not config.SPOTIFY_CLIENT_SECRET:
-        LOGGER("ANNIEMUSIC").warning(
+        LOGGER("POTEMAYOMUSIC").warning(
             "No Spotify Vars defined. Your bot won't be able to play spotify queries."
         )
 
@@ -55,15 +46,15 @@ async def init():
         if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
             if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
                 HELPABLE[imported_module.__MODULE__.lower()] = imported_module
-    LOGGER("ANNIEMUSIC.plugins").info("Successfully Imported All Modules ")
+    LOGGER("POTEMAYOMUSIC.plugins").info("Successfully Imported All Modules ")
 
     await userbot.start()
-    await ANNIE.start()
-    await ANNIE.decorators()
-    LOGGER("ANNIEMUSIC").info("ANNIEMUSIC STARTED SUCCESSFULLY 🕊️")
+    await TOXIC.start()
+    await TOXIC.decorators()
+    LOGGER("POTEMAYOMUSIC").info("POTEMAYOMUSIC STARTED SUCCESSFULLY 🕊️")
     await idle()
 
 
 if __name__ == "__main__":
     asyncio.get_event_loop_policy().get_event_loop().run_until_complete(init())
-    LOGGER("ANNIEMUSIC").info("Stopping ANNIEMUSIC! GoodBye")
+    LOGGER("POTEMAYOMUSIC").info("Stopping POTEMAYOMUSIC! GoodBye")
