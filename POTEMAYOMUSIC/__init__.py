@@ -1,12 +1,12 @@
 import json
 import os
 
-from ANNIEMUSIC.core.bot import ANNIEBot
-from ANNIEMUSIC.core.dir import dirr
-from ANNIEMUSIC.core.git import git
-from ANNIEMUSIC.core.userbot import Userbot
-from ANNIEMUSIC.core.youtube import anniegirl
-from ANNIEMUSIC.misc import dbb, heroku, sudo
+from POTEMAYOMUSIC.core.bot import TOXICBot
+from POTEMAYOMUSIC.core.dir import dirr
+from POTEMAYOMUSIC.core.git import git
+from POTEMAYOMUSIC.core.userbot import Userbot
+from POTEMAYOMUSIC.core.youtube import toxicxd
+from POTEMAYOMUSIC.misc import dbb, heroku, sudo
 
 from .logging import LOGGER
 
@@ -20,9 +20,9 @@ heroku()
 
 sudo()
 
-anniegirl()
+toxicxd()
 
-app = ANNIEBot()
+app = TOXICBot()
 
 userbot = Userbot()
 
