@@ -1,5 +1,5 @@
 from config import LOG_GROUP_ID
-from ANNIEMUSIC import app
+from POTEMAYOMUSIC import app
 
 protected_messages = {}
 
