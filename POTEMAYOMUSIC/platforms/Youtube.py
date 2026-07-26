@@ -11,8 +11,8 @@ from youtubesearchpython.__future__ import VideosSearch
 from yt_dlp import YoutubeDL
 
 import config
-from ANNIEMUSIC.utils.database import is_on_off
-from ANNIEMUSIC.utils.formatters import time_to_seconds
+from POTEMAYOMUSIC.utils.database import is_on_off
+from POTEMAYOMUSIC.utils.formatters import time_to_seconds
 
 
 def cookies():
