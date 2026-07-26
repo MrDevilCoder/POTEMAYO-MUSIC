@@ -1,13 +1,3 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 import logging
 from functools import wraps
 from traceback import format_exc as err
@@ -15,8 +5,8 @@ from traceback import format_exc as err
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram.types import Message
 
-from ANNIEMUSIC import app
-from ANNIEMUSIC.misc import SUDOERS
+from POTEMAYOMUSIC import app
+from POTEMAYOMUSIC.misc import SUDOERS
 
 
 async def member_permissions(chat_id: int, user_id: int):
