@@ -2,7 +2,7 @@ from pyrogram.types import InlineKeyboardButton
 
 import config
 from config import SUPPORT_GROUP
-from ANNIEMUSIC import app
+from POTEMAYOMUSIC import app
 
 
 def start_pannel(_):
@@ -71,7 +71,7 @@ def music_start_panel(_):
         ],
         [
             InlineKeyboardButton(text="❄ Owner ❄", callback_data="developer"),
-            InlineKeyboardButton(text="🎄 Update 🎄", url="https://t.me/SHINOBI_WORLD_SUPPORT"),
+            InlineKeyboardButton(text="🎄 Update 🎄", url="https://t.me/DC_OFFICIAL_BOTS"),
         ],
     ]
     return buttons
