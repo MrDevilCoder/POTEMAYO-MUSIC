@@ -1,19 +1,8 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIE-MUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIE-MUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
-
 from typing import Union
 
 from config import autoclean, chatstats, userstats
 from config.config import time_to_seconds
-from ANNIEMUSIC.misc import db
+from POTEMAYOMUSIC.misc import db
 
 
 async def put_queue(
