@@ -1,13 +1,3 @@
-#
-# Copyright (C) 2024 by Moonshining1@Github, < https://github.com/Moonshining1 >.
-#
-# This file is part of < https://github.com/Moonshining1/ANNIEMUSIC > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Moonshining1/ANNIEMUSIC/blob/master/LICENSE >
-#
-# All rights reserved.
-
-
 import asyncio
 
 from pyrogram import Client as c
@@ -15,7 +5,7 @@ from pyrogram import Client as c
 API_ID = input("\nEnter Your API_ID:\n > ")
 API_HASH = input("\nEnter Your API_HASH:\n > ")
 
-i = c("moonstring", in_memory=True, api_id=API_ID, api_hash=API_HASH)
+i = c("toxicstring", in_memory=True, api_id=API_ID, api_hash=API_HASH)
 
 
 async def main():
