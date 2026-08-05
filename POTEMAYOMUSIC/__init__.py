@@ -1,7 +1,7 @@
 import json
 import os
 
-from POTEMAYOMUSIC.core.bot import TOXICBot
+from POTEMAYOMUSIC.core.bot import toxicbot
 from POTEMAYOMUSIC.core.dir import dirr
 from POTEMAYOMUSIC.core.git import git
 from POTEMAYOMUSIC.core.userbot import Userbot
