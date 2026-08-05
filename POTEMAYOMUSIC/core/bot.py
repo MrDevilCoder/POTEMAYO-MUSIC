@@ -6,7 +6,7 @@ import config
 from ..logging import LOGGER
 
 
-class toxic(Client):
+class potemayo(Client):
     def __init__(self):
         LOGGER(__name__).info(f"Potemayo is on the way...")
         super().__init__(
