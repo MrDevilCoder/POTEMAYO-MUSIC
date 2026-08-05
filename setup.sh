@@ -62,3 +62,70 @@ packages() {
     fi
 }
 
+# ───  Node.js ─────────────────────────────────────Install─────────────────────
+install_node() {
+    if command -v npm &>/dev/null; then
+        success "Node.js/npm already installed."
+        return
+    fi
+    info "Installing Node.js and npm..."
+    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - >nodelog.txt 2>&1
+    sudo apt-get install -y nodejs >>nodelog.txt 2>&1
+    sudo npm install -g npm >>nodelog.txt 2>&1
+    success "Node.js installed." || { error "Node.js install failed. See nodelog.txt"; exit 1; }
+}
+
+# ─── Install Python dependencies ──────────────────────────────────────────────
+installation() {
+    info "Upgrading pip and installing Python dependencies..."
+    pip3 install --upgrade pip >>pypilog.txt 2>&1
+    pip3 install -r requirements.txt >>pypilog.txt 2>&1 && success "Python dependencies installed." || {
+        error "Dependency install failed. See pypilog.txt"
+        exit 1
+    }
+}
+
+# ─── Write .env interactively ────────────────────────────────────────────────
+write_env() {
+    printf "${PURPLE}Enter your bot credentials:\n${RESET}"
+
+    printf "API ID: ";        read -r api_id
+    printf "API HASH: ";      read -r api_hash
+    printf "BOT TOKEN: ";     read -r bot_token
+    printf "OWNER ID: ";      read -r owner_id
+    printf "MONGO DB URI: ";  read -r mongo_db
+    printf "LOG GROUP ID: ";  read -r logger
+    printf "STRING SESSION: ";read -r string_session
+
+    rm -f .env
+    cat > .env <<EOF
+API_ID=${api_id}
+API_HASH=${api_hash}
+BOT_TOKEN=${bot_token}
+MONGO_DB_URI=${mongo_db}
+LOGGER_ID=${logger}
+STRING_SESSION=${string_session}
+OWNER_ID=${owner_id}
+EOF
+    success ".env written successfully."
+}
+
+# ─── Main ─────────────────────────────────────────────────────────────────────
+clear
+info "Welcome to POTEMAYOMUSIC Setup Installer"
+info "Logs: nodelog.txt (Node.js errors), pypilog.txt (Python errors)"
+sleep 1
+
+# Validate sudo access upfront
+info "Checking sudo privileges..."
+sudo -v || { error "sudo is required. Run as a user with sudo access."; exit 1; }
+
+update
+packages
+install_node
+installation
+write_env
+
+echo
+success "POTEMAYOMUSIC installation complete!"
+info "Start the bot with:  bash start"
