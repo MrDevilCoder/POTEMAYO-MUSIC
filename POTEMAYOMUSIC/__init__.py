@@ -1,7 +1,7 @@
 import json
 import os
 
-from POTEMAYOMUSIC.core.bot import toxicbot
+from POTEMAYOMUSIC.core.bot import potemyaobot
 from POTEMAYOMUSIC.core.dir import dirr
 from POTEMAYOMUSIC.core.git import git
 from POTEMAYOMUSIC.core.userbot import Userbot
@@ -22,7 +22,7 @@ sudo()
 
 toxicxd()
 
-app = TOXICBot()
+app = potemayoBot()
 
 userbot = Userbot()
 
