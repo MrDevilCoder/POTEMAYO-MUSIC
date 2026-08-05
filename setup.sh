@@ -36,3 +36,29 @@ update() {
     fi
 }
 
+# ─── Install system packages ──────────────────────────────────────────────────
+packages() {
+    # pip / python3-pip
+    if ! command -v pip3 &>/dev/null; then
+        info "pip not found — installing python3-pip..."
+        sudo apt-get install -y python3-pip -qq && success "pip installed." || { error "pip install failed."; exit 1; }
+    fi
+
+    # ffmpeg
+    if ! command -v ffmpeg &>/dev/null; then
+        info "ffmpeg not found — installing..."
+        sudo apt-get install -y ffmpeg -qq && success "ffmpeg installed." || {
+            error "ffmpeg install failed. Install it manually before running the bot."
+            exit 1
+        }
+    fi
+
+    # Warn if ffmpeg is version 3 (live streams need v4+)
+    ffmpeg_version=$(ffmpeg -version 2>&1 | grep -oP 'version \K[0-9]+' | head -1)
+    if [[ "$ffmpeg_version" -lt 4 ]]; then
+        warn "You have ffmpeg v${ffmpeg_version}. Live stream playback requires ffmpeg v4+."
+    else
+        success "ffmpeg v${ffmpeg_version} — OK."
+    fi
+}
+
