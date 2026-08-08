@@ -7,7 +7,7 @@ import time
 import psutil
 import logging
 
-from BROKENXMUSIC.logging import LOGGER
+from POTEMAYOMUSIC.logging import LOGGER
 from contextlib import asynccontextmanager
 
 
@@ -22,7 +22,7 @@ logging.basicConfig(
 
 log = LOGGER(__name__)
 
-log.info("🚀 Broken X Network Booting...")
+log.info("🚀 Devil X Network Booting...")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -91,7 +91,7 @@ async def self_ping():
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 app = FastAPI(
-    title="Broken X Network - System Core",
+    title="Devil X Network - System Core",
     version="4.2.1",
     lifespan=lifespan
 )
@@ -118,7 +118,7 @@ async def root():
         "memory_usage": f"{psutil.virtual_memory().percent}%",
         "uptime": f"{int(uptime)} seconds",
         "api_endpoint": "https://api.telegram.org",
-        "service": "BrokenX-Music-Core"
+        "service": "Potemayo-Music-Core"
     }
 
 
