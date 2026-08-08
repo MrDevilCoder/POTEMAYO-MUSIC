@@ -2,14 +2,15 @@ import asyncio
 import importlib
 
 from pyrogram import idle
+from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from config import BANNED_USERS
-from POTEMAYOMUSIC import HELPABLE, LOGGER, app, userbot
+from POTEMAYOMUSIC import LOGGER, app, userbot
 from POTEMAYOMUSIC.core.call import TOXIC
+from POTEMAYOMUSIC.misc import sudo
 from POTEMAYOMUSIC.plugins import ALL_MODULES
 from POTEMAYOMUSIC.utils.database import get_banned_users, get_gbanned
-
+from config import BANNED_USERS
 
 async def init():
     if (
@@ -19,30 +20,35 @@ async def init():
         and not config.STRING4
         and not config.STRING5
     ):
-        LOGGER("POTEMAYOMUSIC").error(
-            "No Assistant Clients Vars Defined!.. Exiting Process."
-        )
-        return
-    if not config.SPOTIFY_CLIENT_ID and not config.SPOTIFY_CLIENT_SECRET:
-        LOGGER("POTEMAYOMUSIC").warning(
-            "No Spotify Vars defined. Your bot won't be able to play spotify queries."
-        )
-
-    try:
+        LOGGER(_name_).error("Assistant Client Variables Not Defined!.. Exiting...")
+        exif()
+    await sudo()
+    try: 
         users = await get_gbanned()
         for user_id in users:
             BANNED_USERS.add(user_id)
         users = await get_banned_users()
         for user_id in users:
             BANNED_USERS.add(user_id)
-    except Exception:
+    except:
         pass
-
     await app.start()
-
     for all_module in ALL_MODULES:
-        imported_module = importlib.import_module(all_module)
-
+        importlib.import_module("POTEMAYOMUSIC.plugins" + all_module)
+    LOGGER("POTEMAYOMUSIC.plugins").info("Successfully Imported Modules ")
+    await userbot.start()
+    await TOXIC.start()
+    try:
+        await Toxic.stream_call(" https://te.legraph/file/29f784eb49d23Oab62e9e.mp4")
+    except NoActiveGroupCall:
+        LOGGER("musictoxic").error(
+            "please turn on the videochat of your log group\channel.\n\nStopping Bot..."
+        )
+        exit()
+    except:
+        pass
+    await Toxic.decorators()
+        
         if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
             if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
                 HELPABLE[imported_module.__MODULE__.lower()] = imported_module
