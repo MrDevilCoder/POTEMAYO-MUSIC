@@ -6,8 +6,8 @@
     "python3",
     "telegram",
     "bot",
-    "ANNIE",
-    "ANNIEMUSICBot",
+    "POTEMAYO",
+    "MUSICBot",
     "telegram-bot",
     "pyrogram"
     ],
@@ -16,22 +16,22 @@
     "env": {
       "API_ID": {
         "description": "Get this value from https://my.telegram.org",
-        "value": "27613077",
+        "value": "",
         "required": true
       },
       "API_HASH": {
         "description": "Get this value from https://my.telegram.org",
-        "value": "19dccde5b307a489ec9ded3a8a558e34",
+        "value": "",
         "required": true
       },
       "BOT_TOKEN": {
         "description": "A Bot's token Get it from @Botfather",
-        "value": "8107054973:AAEsqd7vwxV8pEKlS4uIJfdVZsLC1h8VjoE",
+        "value": "",
         "required": true
       },
       "BOT_USERNAME": {
         "description": "A Bot's username Get it from @Botfather",
-        "value": "Teamtestingbot",
+        "value": "",
         "required": true
       },
       "EXTRA_PLUGINS": {
@@ -41,17 +41,17 @@
       },
       "MONGO_DB_URI": {
         "description": "Get a mongodb url from `https://cloud.mongodb.com` . You can leave it blank if you want , bot will use ANNIE's database for you.",
-        "value": "mongodb+srv://GodKalyug1:GodKalyug1@cluster0.xjwo0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+        "value": "",
         "required": true
       },
       "OWNER_ID": {
         "description": "The user id(s) of user(s) whom you would like to add as a OWNER. Multiple values shall be seperated with a space.",
-        "value": "6996208572",
+        "value": "",
         "required": true
       },
       "STRING_SESSION": {
         "description": "A Pyrogram String Session. One Assistant is Compulsory.",
-        "value": "BQGmotEAGvYth2FnyATn7bFnVeFmeAKt6Oa7Qp-gY7kR764Zmg_Mj-QvncVY34rQ9zsJS2rA1dhrmsoHpmDqZb6QbpME7I_cXodSlmoZfWAlXtEEwa7XdCC5XJ5jrtChxiM4ObM5U8uI0vCBCOr3CyBcqvUjNuvNBUq1dOHwmiZsNy4fUrtkiPVqASNcMgPGuMo_NvGStTC5U-Eg18fF-ISWOSkDxwpejZDrJ8p3AyWgaSlqszwP0Q_SmDfGIZ6bH1dbKT35ybjRGaS1q7KetZDnuk5z3T5HZ9qE2P5eVdr5123cx4qm1F0pq55jn2hI0wHtgjc_8Qv9rNUrK7csXKSCcWzFegAAAAFfyK5dAA",
+        "value": "",
         "required": true
       },
       "HEROKU_API_KEY": {
@@ -66,7 +66,7 @@
       },
       "LOG_GROUP_ID": {
         "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Use only Group. Please don't use Channel ID.",
-        "value": "-1002302134961",
+        "value": "",
         "required": true
       },
       "AUTO_GCAST": {
@@ -91,7 +91,7 @@
       },
       "UPSTREAM_REPO": {
         "description": "If you dont know this, Leave as it is",
-        "value": "https://github.com/Devilking12/HINATA-MUSIC",
+        "value": "",
         "required": true
       },
       "UPSTREAM_BRANCH": {
