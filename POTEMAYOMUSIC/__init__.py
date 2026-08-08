@@ -1,4 +1,4 @@
-from POTEMAYOMUSIC.core.bot import Potemayo
+from POTEMAYOMUSIC.core.bot import Toxic
 from POTEMAYOMUSIC.core.dir import dirr
 from POTEMAYOMUSIC.core.git import git
 from POTEMAYOMUSIC.core.userbot import Userbot
