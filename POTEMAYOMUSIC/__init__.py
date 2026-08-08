@@ -1,28 +1,17 @@
-import json
-import os
-
-from POTEMAYOMUSIC.core.bot import potemyaobot
+from POTEMAYOMUSIC.core.bot import Potemayo
 from POTEMAYOMUSIC.core.dir import dirr
 from POTEMAYOMUSIC.core.git import git
 from POTEMAYOMUSIC.core.userbot import Userbot
-from POTEMAYOMUSIC.core.youtube import toxicxd
-from POTEMAYOMUSIC.misc import dbb, heroku, sudo
+from POTEMAYOMUSIC.misc import dbb, heroku
 
 from .logging import LOGGER
 
 dirr()
-
 git()
-
 dbb()
-
 heroku()
 
-sudo()
-
-toxicxd()
-
-app = potemayoBot()
+app = potemayo()
 
 userbot = Userbot()
 
@@ -35,4 +24,3 @@ Apple = AppleAPI()
 Resso = RessoAPI()
 SoundCloud = SoundAPI()
 Telegram = TeleAPI()
-HELPABLE = {}
