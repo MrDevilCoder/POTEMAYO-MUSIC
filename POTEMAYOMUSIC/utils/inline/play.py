@@ -1,7 +1,7 @@
 import math
 from pyrogram.types import InlineKeyboardButton
-from BROKENXMUSIC.utils.formatters import time_to_seconds
-from BROKENXMUSIC import app
+from POTEMAYOMUSIC.utils.formatters import time_to_seconds
+from POTEMAYOMUSIC import app
 
 
 
