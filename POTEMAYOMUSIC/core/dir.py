@@ -17,5 +17,5 @@ def dirr():
     if "cache" not in os.listdir():
         os.mkdir("cache")
 
-    LOGGER(_name_).info("Directories Updated.")
+    LOGGER("potemayommusic").info("Directories Updated.")
 
