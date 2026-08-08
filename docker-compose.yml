@@ -2,7 +2,7 @@ version: '3.8'
 services:
   broken-music:
     build: .
-    container_name: broken-music
+    container_name: potemayo-music
     env_file:
       - .env
     restart: always
