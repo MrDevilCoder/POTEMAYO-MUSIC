@@ -10,7 +10,7 @@ python3 -m uvicorn app:app --host 0.0.0.0 --port 10000 &
 
 echo "🔑 Authorizing Telegram Bot..."
 while true; do
-    python3 -m BROKENXMUSIC 
+    python3 -m POTEMAYOMUSIC 
     echo "⚠️ Core Process Terminated. Rebooting in 5s..."
     sleep 5
 done
