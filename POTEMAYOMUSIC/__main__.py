@@ -57,10 +57,15 @@ async def init():
     await userbot.start()
     await TOXIC.start()
     await TOXIC.decorators()
-    LOGGER("POTEMAYOMUSIC").info("POTEMAYOMUSIC STARTED SUCCESSFULLY 🕊️")
+    LOGGER("POTEMAYOMUSIC").info(
+        "\x42\x72\x6f\x6b\x65\x6e\x20\x78\x20\x53\x70\x6f\x74\x69\x66\x79\x20\x4d\x75\x73\x69\x63\x20\x42\x6f\x74\x20\x53\x74\x61\x72\x74\x65\x64\x20\x53\x75\x63\x63\x65\x73\x73\x66\x75\x6c\x6c\x79\x2e\x20\x0a\x0a\x44\x6f\x6e\x27\x74\x20\x46\x6f\x72\x67\x65\x74\x20\x54\x6f\x20\x56\x69\x73\x69\x74\x20\x40\x42\x72\x6f\x6b\x65\x6e\x78\x4e\x65\x74\x77\x6f\x72\x6b"
+    )
     await idle()
+    await app.stop()
+    await userbot.stop()
+    LOGGER("POTEMAYOMUSIC").info("Stopping Devilnetwork Music Bot...")
 
 
 if __name__ == "__main__":
-    asyncio.get_event_loop_policy().get_event_loop().run_until_complete(init())
-    LOGGER("POTEMAYOMUSIC").info("Stopping POTEMAYOMUSIC! GoodBye")
+    asyncio.get_event_loop().run_until_complete(init())
+
